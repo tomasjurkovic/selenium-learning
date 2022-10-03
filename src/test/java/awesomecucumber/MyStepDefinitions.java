@@ -1,5 +1,6 @@
 package awesomecucumber;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -41,5 +42,46 @@ public class MyStepDefinitions {
         Assert.assertEquals(quantity, Integer.parseInt(actualProductQuantity));
         Assert.assertEquals(productName, actualProductName);
 
+    }
+
+    @Given("I'm a guest customer")
+    public void iMAGuestCustomer() {
+    }
+
+    @And("I have a product in the cart")
+    public void iHaveAProductInTheCart() throws InterruptedException {
+        driver.get("https://askomdch.com/store");
+        By addToCartBtn = By.cssSelector("a[aria-label='Add “Blue Shoes” to your cart']");
+        driver.findElement(addToCartBtn).click();
+        Thread.sleep(5000);
+        By viewCartLink = By.cssSelector("a[title='View cart']");
+        driver.findElement(viewCartLink).click();
+    }
+
+    @And("I'm on the Checkout page")
+    public void iMOnTheCheckoutPage() {
+        By proceedToCheckoutBtn = By.cssSelector(".checkout-button");
+        driver.findElement(proceedToCheckoutBtn).click();
+    }
+
+    @When("I provide billing details")
+    public void iProvideBillingDetails() {
+        By billingFirstNameFld = By.id("billing_first_name");
+        By billingLastNameFld = By.id("billing_last_name");
+        By billingAddressOneFld = By.id("billing_address_1");
+        By billingCityFld = By.id("billing_city");
+        By billingStateDropdownFld = By.id("billing_state");
+        By billingZipFld = By.id("billing_postcode");
+        By billingEmailFld = By.id("billing_email");
+
+
+    }
+
+    @And("I place an order")
+    public void iPlaceAnOrder() {
+    }
+
+    @Then("The order should be placed successfully")
+    public void theOrderShouldBePlacedSuccessfully() {
     }
 }
