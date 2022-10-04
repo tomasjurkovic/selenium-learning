@@ -51,8 +51,7 @@ public class MyStepDefinitions {
 
     @And("I'm on the Checkout page")
     public void iMOnTheCheckoutPage() {
-        By proceedToCheckoutBtn = By.cssSelector(".checkout-button");
-        driver.findElement(proceedToCheckoutBtn).click();
+        new CartPage(driver).checkout();
     }
 
     @When("I provide billing details")

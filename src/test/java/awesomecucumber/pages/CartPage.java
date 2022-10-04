@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 public class CartPage extends BasePage {
     @FindBy(css = "td[class='product-name'] a") private WebElement productNameFld;
     @FindBy(css = "input[type=\"number\"]") private WebElement productQuantity;
+    @FindBy(css = ".checkout-button") private WebElement proceedToCheckoutBth;
 
     public CartPage(WebDriver driver) {
         super(driver);
@@ -21,6 +22,10 @@ public class CartPage extends BasePage {
     public int getProductQuantity() {
         return Integer.parseInt(wait.until(ExpectedConditions.visibilityOf(productQuantity))
                 .getAttribute("value"));
+    }
+
+    public void checkout() {
+        wait.until(ExpectedConditions.elementToBeClickable(proceedToCheckoutBth)).click();
     }
 }
 
