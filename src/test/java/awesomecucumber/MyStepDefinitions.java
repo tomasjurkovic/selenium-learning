@@ -1,5 +1,6 @@
 package awesomecucumber;
 
+import awesomecucumber.factory.DriverFactory;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -19,12 +20,7 @@ public class MyStepDefinitions {
 
     @Given("I'm on the Store Page")
     public void iMOnTheStorePage() {
-        System.setProperty(
-                "webdriver.chrome.driver",
-                "C:\\Users\\tomas.jurkovic\\Downloads\\chromedriver\\chromedriver.exe"
-        );
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        driver = DriverFactory.getDriver();
         driver.get("https://askomdch.com/store");
     }
 
@@ -50,12 +46,7 @@ public class MyStepDefinitions {
 
     @Given("I'm a guest customer")
     public void iMAGuestCustomer() {
-        System.setProperty(
-                "webdriver.chrome.driver",
-                "C:\\Users\\tomas.jurkovic\\Downloads\\chromedriver\\chromedriver.exe"
-        );
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        driver = DriverFactory.getDriver();
         driver.get("https://askomdch.com/store");
     }
 
