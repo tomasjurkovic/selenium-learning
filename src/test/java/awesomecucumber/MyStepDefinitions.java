@@ -1,6 +1,7 @@
 package awesomecucumber;
 
 import awesomecucumber.factory.DriverFactory;
+import awesomecucumber.pages.StorePage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -21,16 +22,12 @@ public class MyStepDefinitions {
     @Given("I'm on the Store Page")
     public void iMOnTheStorePage() {
         driver = DriverFactory.getDriver();
-        driver.get("https://askomdch.com/store");
+        new StorePage(driver).load("https://askomdch.com/store");
     }
 
     @When("I add a {string} to the Cart")
-    public void iAddAToTheCart(String productName) throws InterruptedException {
-        By addToCartBtn = By.cssSelector("a[aria-label='Add “"+ productName + "” to your cart']");
-        driver.findElement(addToCartBtn).click();
-        Thread.sleep(5000);
-        By viewCartLink = By.cssSelector("a[title='View cart']");
-        driver.findElement(viewCartLink).click();
+    public void iAddAToTheCart(String productName) {
+        new StorePage(driver).addToCart(productName);
     }
 
     @Then("I should see {int} {string} in the Cart")
@@ -47,17 +44,12 @@ public class MyStepDefinitions {
     @Given("I'm a guest customer")
     public void iMAGuestCustomer() {
         driver = DriverFactory.getDriver();
-        driver.get("https://askomdch.com/store");
+        new StorePage(driver).load("https://askomdch.com/store");
     }
 
     @And("I have a product in the cart")
-    public void iHaveAProductInTheCart() throws InterruptedException {
-        driver.get("https://askomdch.com/store");
-        By addToCartBtn = By.cssSelector("a[aria-label='Add “Blue Shoes” to your cart']");
-        driver.findElement(addToCartBtn).click();
-        Thread.sleep(5000);
-        By viewCartLink = By.cssSelector("a[title='View cart']");
-        driver.findElement(viewCartLink).click();
+    public void iHaveAProductInTheCart() {
+        new StorePage(driver).addToCart("Blue Shoes");
     }
 
     @And("I'm on the Checkout page")
