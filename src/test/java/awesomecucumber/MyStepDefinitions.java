@@ -2,6 +2,7 @@ package awesomecucumber;
 
 import awesomecucumber.factory.DriverFactory;
 import awesomecucumber.pages.CartPage;
+import awesomecucumber.pages.CheckoutPage;
 import awesomecucumber.pages.StorePage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -10,7 +11,6 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
@@ -56,42 +56,25 @@ public class MyStepDefinitions {
 
     @When("I provide billing details")
     public void iProvideBillingDetails(List<Map<String, String>> billingDetails) {
-        By billingFirstNameFld = By.id("billing_first_name");
-        By billingLastNameFld = By.id("billing_last_name");
-        By billingAddressOneFld = By.id("billing_address_1");
-        By billingCityFld = By.id("billing_city");
-        By billingStateDropdownFld = By.id("billing_state");
-        By billingZipFld = By.id("billing_postcode");
-        By billingEmailFld = By.id("billing_email");
-
-        driver.findElement(billingFirstNameFld).clear();
-        driver.findElement(billingFirstNameFld).sendKeys(billingDetails.get(0).get("firstname"));
-        driver.findElement(billingLastNameFld).clear();
-        driver.findElement(billingLastNameFld).sendKeys(billingDetails.get(0).get("lastname"));
-        driver.findElement(billingAddressOneFld).clear();
-        driver.findElement(billingAddressOneFld).sendKeys(billingDetails.get(0).get("address_line_1"));
-        driver.findElement(billingCityFld).clear();
-        driver.findElement(billingCityFld).sendKeys(billingDetails.get(0).get("city"));
-        Select select = new Select(driver.findElement(billingStateDropdownFld));
-        select.selectByVisibleText(billingDetails.get(0).get("state"));
-        driver.findElement(billingZipFld).clear();
-        driver.findElement(billingZipFld).sendKeys(billingDetails.get(0).get("zip"));
-        driver.findElement(billingEmailFld).clear();
-        driver.findElement(billingEmailFld).sendKeys(billingDetails.get(0).get("email"));
+        CheckoutPage checkoutPage = new CheckoutPage(driver);
+        checkoutPage.setBillingDetails(
+                billingDetails.get(0).get("firstname"),
+                billingDetails.get(0).get("lastname"),
+                billingDetails.get(0).get("address_line_1"),
+                billingDetails.get(0).get("city"),
+                billingDetails.get(0).get("state"),
+                billingDetails.get(0).get("zip"),
+                billingDetails.get(0).get("email"));
     }
 
     @And("I place an order")
-    public void iPlaceAnOrder() throws InterruptedException {
-        By placeOrderBtn = By.id("place_order");
-        driver.findElement(placeOrderBtn).click();
-        Thread.sleep(5000);
+    public void iPlaceAnOrder() {
+        new CheckoutPage(driver).placeOrder();
     }
 
     @Then("The order should be placed successfully")
     public void theOrderShouldBePlacedSuccessfully() {
         String expectedNoticeText = "Thank you. Your order has been received.";
-        By noticeText = By.cssSelector(".woocommerce-thankyou-order-received");
-        String actualNoticeText = driver.findElement(noticeText).getText();
-        Assert.assertEquals(expectedNoticeText, actualNoticeText);
+        Assert.assertEquals(expectedNoticeText, new CheckoutPage(driver).getNoticeText());
     }
 }
