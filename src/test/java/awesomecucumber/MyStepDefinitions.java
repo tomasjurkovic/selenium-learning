@@ -1,6 +1,7 @@
 package awesomecucumber;
 
 import awesomecucumber.factory.DriverFactory;
+import awesomecucumber.pages.CartPage;
 import awesomecucumber.pages.StorePage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -32,13 +33,9 @@ public class MyStepDefinitions {
 
     @Then("I should see {int} {string} in the Cart")
     public void iShouldSeeInTheCart(int quantity, String productName) {
-        By productNameFld = By.cssSelector("td[class='product-name'] a");
-        String actualProductName = driver.findElement(productNameFld).getText();
-        By productQuantity = By.cssSelector("input[type=\"number\"]");
-        String actualProductQuantity = driver.findElement(productQuantity).getAttribute("value");
-        Assert.assertEquals(quantity, Integer.parseInt(actualProductQuantity));
-        Assert.assertEquals(productName, actualProductName);
-
+        CartPage cartPage = new CartPage(driver);
+        Assert.assertEquals(quantity, cartPage.getProductQuantity()));
+        Assert.assertEquals(productName, cartPage.getProductName());
     }
 
     @Given("I'm a guest customer")
