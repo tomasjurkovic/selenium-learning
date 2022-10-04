@@ -34,7 +34,7 @@ public class MyStepDefinitions {
     @Then("I should see {int} {string} in the Cart")
     public void iShouldSeeInTheCart(int quantity, String productName) {
         CartPage cartPage = new CartPage(driver);
-        Assert.assertEquals(quantity, cartPage.getProductQuantity()));
+        Assert.assertEquals(quantity, cartPage.getProductQuantity());
         Assert.assertEquals(productName, cartPage.getProductName());
     }
 
