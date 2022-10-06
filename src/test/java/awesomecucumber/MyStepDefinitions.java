@@ -1,5 +1,6 @@
 package awesomecucumber;
 
+import awesomecucumber.constants.EndPoints;
 import awesomecucumber.domainobjects.BillingDetails;
 import awesomecucumber.domainobjects.Product;
 import awesomecucumber.factory.DriverFactory;
@@ -22,7 +23,7 @@ public class MyStepDefinitions {
     @Given("I'm on the Store Page")
     public void iMOnTheStorePage() {
         driver = DriverFactory.getDriver();
-        new StorePage(driver).load("/store");
+        new StorePage(driver).load(EndPoints.STORE.url);
     }
 
     @When("I add a {product} to the Cart")
@@ -40,7 +41,7 @@ public class MyStepDefinitions {
     @Given("I'm a guest customer")
     public void iMAGuestCustomer() {
         driver = DriverFactory.getDriver();
-        new StorePage(driver).load("/store");
+        new StorePage(driver).load(EndPoints.STORE.url);
     }
 
     @And("I have a product in the cart")
