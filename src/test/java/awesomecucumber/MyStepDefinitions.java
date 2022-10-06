@@ -81,7 +81,7 @@ public class MyStepDefinitions {
                 billingCity,
                 billingStateName,
                 billingZip,
-                billingEmail)
+                billingEmail);
     }
 
     @And("I place an order")
