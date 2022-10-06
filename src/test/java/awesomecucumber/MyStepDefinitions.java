@@ -1,6 +1,7 @@
 package awesomecucumber;
 
 import awesomecucumber.domainobjects.BillingDetails;
+import awesomecucumber.domainobjects.Product;
 import awesomecucumber.factory.DriverFactory;
 import awesomecucumber.pages.CartPage;
 import awesomecucumber.pages.CheckoutPage;
@@ -11,9 +12,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-
-import java.util.List;
-import java.util.Map;
 
 public class MyStepDefinitions {
 
@@ -26,16 +24,16 @@ public class MyStepDefinitions {
         new StorePage(driver).load("https://askomdch.com/store");
     }
 
-    @When("I add a {string} to the Cart")
-    public void iAddAToTheCart(String productName) {
-        new StorePage(driver).addToCart(productName);
+    @When("I add a {product} to the Cart")
+    public void iAddAToTheCart(Product product) {
+        new StorePage(driver).addToCart(product.getName());
     }
 
-    @Then("I should see {int} {string} in the Cart")
-    public void iShouldSeeInTheCart(int quantity, String productName) {
+    @Then("I should see {int} {product} in the Cart")
+    public void iShouldSeeInTheCart(int quantity, Product product) {
         CartPage cartPage = new CartPage(driver);
         Assert.assertEquals(quantity, cartPage.getProductQuantity());
-        Assert.assertEquals(productName, cartPage.getProductName());
+        Assert.assertEquals(product.getName(), cartPage.getProductName());
     }
 
     @Given("I'm a guest customer")
