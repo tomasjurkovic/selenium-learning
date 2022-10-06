@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.nio.charset.StandardCharsets;
+
 public class StorePage extends BasePage {
     @FindBy(css = "a[title='View cart']") private WebElement viewCartLink;
 
@@ -15,7 +17,10 @@ public class StorePage extends BasePage {
     }
 
     public void addToCart(String productName) {
-        By addToCartBtn = By.cssSelector("a[aria-label='Add “"+ productName + "” to your cart']");
+        String raw = "a[aria-label='Add “"+ productName + "” to your cart']";
+        byte[] bytes = raw.getBytes(StandardCharsets.UTF_8);
+        String utf8Encoded = new String(bytes, StandardCharsets.UTF_8);
+        By addToCartBtn = By.cssSelector(utf8Encoded);
         wait.until(ExpectedConditions.elementToBeClickable(addToCartBtn)).click();
         wait.until(ExpectedConditions.elementToBeClickable(viewCartLink)).click();
     }
