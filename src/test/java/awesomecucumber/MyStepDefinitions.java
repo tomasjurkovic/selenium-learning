@@ -1,5 +1,6 @@
 package awesomecucumber;
 
+import awesomecucumber.domainobjects.BillingDetails;
 import awesomecucumber.factory.DriverFactory;
 import awesomecucumber.pages.CartPage;
 import awesomecucumber.pages.CheckoutPage;
@@ -17,14 +18,7 @@ import java.util.Map;
 public class MyStepDefinitions {
 
     private WebDriver driver;
-    private String billingFirstName;
-    private String billingLastName;
-    private String billingAddress1;
-    private String billingCity;
-    private String billingStateName;
-    private String billingZip;
-    private String billingEmail;
-
+    private BillingDetails billingDetails;
 
     @Given("I'm on the Store Page")
     public void iMOnTheStorePage() {
@@ -61,27 +55,14 @@ public class MyStepDefinitions {
     }
 
     @And("my billing details are")
-    public void myBillingDetailsAre(List<Map<String, String>> billingDetails) {
-        billingFirstName = billingDetails.get(0).get("firstname");
-        billingLastName = billingDetails.get(0).get("lastname");
-        billingAddress1 = billingDetails.get(0).get("address_line_1");
-        billingCity = billingDetails.get(0).get("city");
-        billingStateName = billingDetails.get(0).get("state");
-        billingZip = billingDetails.get(0).get("zip");
-        billingEmail = billingDetails.get(0).get("email");
-
+    public void myBillingDetailsAre(BillingDetails billingDetails) {
+        this.billingDetails = billingDetails;
     }
 
     @When("I provide billing details")
     public void iProvideBillingDetails() {
         CheckoutPage checkoutPage = new CheckoutPage(driver);
-        checkoutPage.setBillingDetails(billingFirstName,
-                billingLastName,
-                billingAddress1,
-                billingCity,
-                billingStateName,
-                billingZip,
-                billingEmail);
+        checkoutPage.setBillingDetails(billingDetails);
     }
 
     @And("I place an order")

@@ -1,5 +1,6 @@
 package awesomecucumber.pages;
 
+import awesomecucumber.domainobjects.BillingDetails;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -66,22 +67,14 @@ public class CheckoutPage extends BasePage {
         return this;
     }
 
-    public CheckoutPage setBillingDetails(
-            String billingFirstName,
-            String billingLastName,
-            String billingAddress1,
-            String billingCity,
-            String billingState,
-            String billingPostcode,
-            String billingEmail
-            ) {
-        return enterBillingFirstName(billingFirstName)
-                .enterBillingLastName(billingLastName)
-                .enterBillingAddress1(billingAddress1)
-                .enterBillingCity(billingCity)
-                .selectFromStateDropdown(billingState)
-                .enterBillingPostcode(billingPostcode)
-                .enterBillingEmail(billingEmail);
+    public CheckoutPage setBillingDetails(BillingDetails billingDetails) {
+        return enterBillingFirstName(billingDetails.getBillingFirstName())
+                .enterBillingLastName(billingDetails.getBillingLastName())
+                .enterBillingAddress1(billingDetails.getBillingAddress1())
+                .enterBillingCity(billingDetails.getBillingCity())
+                .selectFromStateDropdown(billingDetails.getBillingStateName())
+                .enterBillingPostcode(billingDetails.getBillingZip())
+                .enterBillingEmail(billingDetails.getBillingEmail());
     }
 
     public void placeOrder() {
