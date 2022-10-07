@@ -18,7 +18,7 @@ public class DriverFactory {
             }
             case "firefox" -> {
                 System.setProperty(
-                        "webdriver.gekco.driver",
+                        "webdriver.gecko.driver",
                         "C:\\Users\\tomas.jurkovic\\Downloads\\chromedriver\\geckodriver.exe"
                 );
                 driver = new FirefoxDriver();

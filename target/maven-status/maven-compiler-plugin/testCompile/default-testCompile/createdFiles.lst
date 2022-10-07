@@ -1,4 +1,5 @@
 awesomecucumber\MyStepDefinitions.class
+runners\MyJUnitRunnerTest.class
 awesomecucumber\pages\CartPage.class
 awesomecucumber\customtype\CustomParameterType.class
 awesomecucumber\pages\CheckoutPage.class
@@ -10,5 +11,6 @@ awesomecucumber\hooks\MyHooks.class
 awesomecucumber\domainobjects\Product.class
 awesomecucumber\domainobjects\BillingDetails.class
 awesomecucumber\pages\StorePage.class
+awesomecucumber\runners\MyJUnitRunnerTest.class
 awesomecucumber\pages\BasePage.class
 awesomecucumber\constants\EndPoints.class

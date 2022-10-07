@@ -6,9 +6,11 @@ D:\Projects\selenium-two\selenium-course\src\test\java\awesomecucumber\customtyp
 D:\Projects\selenium-two\selenium-course\src\test\java\awesomecucumber\pages\BasePage.java
 D:\Projects\selenium-two\selenium-course\src\test\java\awesomecucumber\utils\ConfigLoader.java
 D:\Projects\selenium-two\selenium-course\src\test\java\awesomecucumber\pages\CheckoutPage.java
+D:\Projects\selenium-two\selenium-course\src\test\java\runners\MyJUnitRunnerTest.java
 D:\Projects\selenium-two\selenium-course\src\test\java\awesomecucumber\MyStepDefinitions.java
 D:\Projects\selenium-two\selenium-course\src\test\java\awesomecucumber\constants\EndPoints.java
 D:\Projects\selenium-two\selenium-course\src\test\java\awesomecucumber\utils\PropertyUtils.java
 D:\Projects\selenium-two\selenium-course\src\test\java\awesomecucumber\domainobjects\BillingDetails.java
 D:\Projects\selenium-two\selenium-course\src\test\java\awesomecucumber\pages\StorePage.java
+D:\Projects\selenium-two\selenium-course\src\test\java\awesomecucumber\runners\MyJUnitRunnerTest.java
 D:\Projects\selenium-two\selenium-course\src\test\java\awesomecucumber\customtype\CustomDataTableType.java
