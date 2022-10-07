@@ -1,6 +1,7 @@
 package awesomecucumber.pages;
 
 import awesomecucumber.domainobjects.BillingDetails;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,6 +18,7 @@ public class CheckoutPage extends BasePage {
     @FindBy(id = "billing_email") private WebElement billingEmailFld;
     @FindBy(id = "place_order") private WebElement placeOrderBtn;
     @FindBy(css = ".woocommerce-thankyou-order-received") private WebElement noticeText;
+    private final By overlay = By.cssSelector(".blockUI.blockOverlay");
 
 
     public CheckoutPage enterBillingFirstName(String billingFirstName) {
@@ -78,6 +80,7 @@ public class CheckoutPage extends BasePage {
     }
 
     public void placeOrder() {
+        waitForOverlaysToDisappear(overlay);
         wait.until(ExpectedConditions.elementToBeClickable(placeOrderBtn)).click();
     }
 
