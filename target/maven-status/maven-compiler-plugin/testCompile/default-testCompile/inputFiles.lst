@@ -3,6 +3,7 @@ D:\Projects\selenium-two\selenium-course\src\test\java\awesomecucumber\hooks\MyH
 D:\Projects\selenium-two\selenium-course\src\test\java\awesomecucumber\domainobjects\Product.java
 D:\Projects\selenium-two\selenium-course\src\test\java\awesomecucumber\pages\CartPage.java
 D:\Projects\selenium-two\selenium-course\src\test\java\awesomecucumber\customtype\CustomParameterType.java
+D:\Projects\selenium-two\selenium-course\src\test\java\awesomecucumber\constants\EnvType.java
 D:\Projects\selenium-two\selenium-course\src\test\java\awesomecucumber\pages\BasePage.java
 D:\Projects\selenium-two\selenium-course\src\test\java\awesomecucumber\utils\ConfigLoader.java
 D:\Projects\selenium-two\selenium-course\src\test\java\awesomecucumber\pages\CheckoutPage.java

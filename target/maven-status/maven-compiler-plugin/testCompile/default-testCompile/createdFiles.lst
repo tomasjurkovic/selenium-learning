@@ -3,6 +3,7 @@ runners\MyJUnitRunnerTest.class
 awesomecucumber\pages\CartPage.class
 awesomecucumber\customtype\CustomParameterType.class
 awesomecucumber\pages\CheckoutPage.class
+awesomecucumber\constants\EnvType.class
 awesomecucumber\customtype\CustomDataTableType.class
 awesomecucumber\factory\DriverFactory.class
 awesomecucumber\utils\PropertyUtils.class
@@ -12,5 +13,6 @@ awesomecucumber\domainobjects\Product.class
 awesomecucumber\domainobjects\BillingDetails.class
 awesomecucumber\pages\StorePage.class
 awesomecucumber\runners\MyJUnitRunnerTest.class
+awesomecucumber\utils\ConfigLoader$1.class
 awesomecucumber\pages\BasePage.class
 awesomecucumber\constants\EndPoints.class

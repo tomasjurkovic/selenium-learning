@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="0" name="awesomecucumber.runners.MyJUnitRunnerTest" time="31.531" errors="1" skipped="0">
+<testsuite tests="5" failures="0" name="awesomecucumber.runners.MyJUnitRunnerTest" time="25.719" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="17.0.4+11-LTS-179"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17.0.4\bin"/>
-    <property name="browser" value="firefox"/>
     <property name="maven.multiModuleProjectDirectory" value="D:\Projects\selenium-two\selenium-course"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
@@ -12,6 +11,7 @@
     <property name="path.separator" value=";"/>
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
     <property name="sun.os.patch.level" value=""/>
+    <property name="env" value="STAGE"/>
     <property name="user.script" value=""/>
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
@@ -44,7 +44,7 @@
     <property name="java.class.path" value="C:\Users\tomas.jurkovic\apache-maven-3.8.6\boot\plexus-classworlds-2.6.0.jar"/>
     <property name="java.vm.specification.version" value="17"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean test -Dbrowser=firefox"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean test -Denv=STAGE"/>
     <property name="java.home" value="C:\Program Files\Java\jdk-17.0.4"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -62,62 +62,9 @@
     <property name="sun.stdout.encoding" value="cp437"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="Add to Cart" name="Add one quantity from Store" time="7.099"/>
-  <testcase classname="Add to Cart" name="Add one quantity from Store - examples #1" time="6.1"/>
-  <testcase classname="Add to Cart" name="Add one quantity from Store - examples #2" time="5.739"/>
-  <testcase classname="Add to Cart" name="Add one quantity from Store - examples #3" time="5.748"/>
-  <testcase classname="Place an order" name="using default payment option" time="6.845">
-    <error message="Element &lt;option&gt; could not be scrolled into view
-Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
-System info: host: &apos;KSC1-LHP-K11240&apos;, ip: &apos;192.168.1.5&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.4&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [e12bf339-9853-4626-aab4-58a1aac1c79a, clickElement {id=58ea6e7e-5ebc-402f-907b-daddf2f21d71}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 105.0.2, moz:accessibilityChecks: false, moz:buildID: 20221003135607, moz:debuggerAddress: 127.0.0.1:58286, moz:geckodriverVersion: 0.31.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 20372, moz:profile: C:\Users\TOMAS~1.JUR\AppDat..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://127.0.0.1:58286/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Element: [[[[FirefoxDriver: firefox on WINDOWS (e12bf339-9853-4626-aab4-58a1aac1c79a)] -&gt; id: billing_state]] -&gt; xpath: .//option[normalize-space(.) = &quot;Texas&quot;]]
-Session ID: e12bf339-9853-4626-aab4-58a1aac1c79a" type="org.openqa.selenium.ElementNotInteractableException">org.openqa.selenium.ElementNotInteractableException: Element &lt;option&gt; could not be scrolled into view
-Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
-System info: host: &apos;KSC1-LHP-K11240&apos;, ip: &apos;192.168.1.5&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.4&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [e12bf339-9853-4626-aab4-58a1aac1c79a, clickElement {id=58ea6e7e-5ebc-402f-907b-daddf2f21d71}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 105.0.2, moz:accessibilityChecks: false, moz:buildID: 20221003135607, moz:debuggerAddress: 127.0.0.1:58286, moz:geckodriverVersion: 0.31.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 20372, moz:profile: C:\Users\TOMAS~1.JUR\AppDat..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://127.0.0.1:58286/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Element: [[[[FirefoxDriver: firefox on WINDOWS (e12bf339-9853-4626-aab4-58a1aac1c79a)] -&gt; id: billing_state]] -&gt; xpath: .//option[normalize-space(.) = &quot;Texas&quot;]]
-Session ID: e12bf339-9853-4626-aab4-58a1aac1c79a
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-	at org.openqa.selenium.support.ui.Select.setSelected(Select.java:315)
-	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:117)
-	at awesomecucumber.pages.CheckoutPage.selectFromStateDropdown(CheckoutPage.java:52)
-	at awesomecucumber.pages.CheckoutPage.setBillingDetails(CheckoutPage.java:75)
-	at awesomecucumber.MyStepDefinitions.iProvideBillingDetails(MyStepDefinitions.java:65)
-	at ✽.I provide billing details(file:///D:/Projects/selenium-two/selenium-course/src/test/resources/awesomecucumber/guest_place_an_order.feature:10)
-</error>
-    <system-err>1665145970522	geckodriver	INFO	Listening on 127.0.0.1:51583
-1665145970556	mozrunner::runner	INFO	Running command: &quot;C:\\Program Files\\Mozilla Firefox\\firefox.exe&quot; &quot;--marionette&quot; &quot;--remote-debugging-port&quot; &quot;58286&quot; &quot;--remote-allow-hosts&quot; &quot;localhost&quot; &quot;--remote-allow-origins&quot; &quot;http://localhost:58286/&quot; &quot;-no-remote&quot; &quot;-profile&quot; &quot;C:\\Users\\TOMAS~1.JUR\\AppData\\Local\\Temp\\rust_mozprofileYvpvdJ&quot;
-1665145971035	Marionette	INFO	Marionette enabled
-1665145971041	Marionette	INFO	Listening on port 62595
-Read port: 62595
-WebDriver BiDi listening on ws://127.0.0.1:58286
-1665145971170	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
-console.warn: SearchSettings: &quot;get: No settings file exists, new profile?&quot; (new NotFoundError(&quot;Could not open the file at C:\\Users\\TOMAS~1.JUR\\AppData\\Local\\Temp\\rust_mozprofileYvpvdJ\\search.json.mozlz4&quot;, (void 0)))
-DevTools listening on ws://127.0.0.1:58286/devtools/browser/2ddc31ba-c477-4d3e-a0ac-54b256fc887e
-Oct 07, 2022 2:32:52 PM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected upstream dialect: W3C
-JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
-JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can&apos;t find profile directory.
-JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can&apos;t find profile directory.
-1665145976553	Marionette	INFO	Stopped listening on port 62595
-</system-err>
-  </testcase>
+  <testcase classname="Add to Cart" name="Add one quantity from Store" time="5.391"/>
+  <testcase classname="Add to Cart" name="Add one quantity from Store - examples #1" time="3.84"/>
+  <testcase classname="Add to Cart" name="Add one quantity from Store - examples #2" time="4.459"/>
+  <testcase classname="Add to Cart" name="Add one quantity from Store - examples #3" time="3.501"/>
+  <testcase classname="Place an order" name="using default payment option" time="8.528"/>
 </testsuite>
