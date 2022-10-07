@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="0" name="awesomecucumber.runners.MyJUnitRunnerTest" time="23.163" errors="0" skipped="0">
+<testsuite tests="5" failures="0" name="awesomecucumber.runners.MyJUnitRunnerTest" time="25.719" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="17.0.4+11-LTS-179"/>
@@ -11,6 +11,7 @@
     <property name="path.separator" value=";"/>
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
     <property name="sun.os.patch.level" value=""/>
+    <property name="env" value="STAGE"/>
     <property name="user.script" value=""/>
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
@@ -43,7 +44,7 @@
     <property name="java.class.path" value="C:\Users\tomas.jurkovic\apache-maven-3.8.6\boot\plexus-classworlds-2.6.0.jar"/>
     <property name="java.vm.specification.version" value="17"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean test -Denv=STAGE"/>
     <property name="java.home" value="C:\Program Files\Java\jdk-17.0.4"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -61,9 +62,9 @@
     <property name="sun.stdout.encoding" value="cp437"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="Add to Cart" name="Add one quantity from Store" time="5.002"/>
-  <testcase classname="Add to Cart" name="Add one quantity from Store - examples #1" time="3.759"/>
-  <testcase classname="Add to Cart" name="Add one quantity from Store - examples #2" time="3.544"/>
-  <testcase classname="Add to Cart" name="Add one quantity from Store - examples #3" time="3.339"/>
-  <testcase classname="Place an order" name="using default payment option" time="7.519"/>
+  <testcase classname="Add to Cart" name="Add one quantity from Store" time="5.391"/>
+  <testcase classname="Add to Cart" name="Add one quantity from Store - examples #1" time="3.84"/>
+  <testcase classname="Add to Cart" name="Add one quantity from Store - examples #2" time="4.459"/>
+  <testcase classname="Add to Cart" name="Add one quantity from Store - examples #3" time="3.501"/>
+  <testcase classname="Place an order" name="using default payment option" time="8.528"/>
 </testsuite>
